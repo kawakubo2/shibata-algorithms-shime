@@ -22,12 +22,8 @@ public class 演習3_2 {
 		
 		printHeader(x.length);
 		int result = seqSearchSen(x, num, key);
-		printProcess(x, result);
-		if(result == -1) {
-			System.out.println("検索した値は存在しません");
-		}else {
-			System.out.println("検索した値はarray[" + result + "]です");
-		}
+		printProcess(x, result); 
+		printResult(result);
 		stdIn.close();
 	}
 	public static int seqSearchSen(int[] a, int num, int key) {
@@ -71,5 +67,13 @@ public class 演習3_2 {
 			}
 			System.out.println();
 		}
+	}
+	public static void printResult(int pos) {
+		if(pos == -1) {
+			System.out.println("検索した値は存在しません");
+		}else {
+			System.out.println("検索した値はarray[" + pos + "]です");
+		}
+		
 	}
 }
