@@ -29,7 +29,7 @@ public class PrimeNumber3 {
         for (int i = 0; i < ptr; i++) {
             System.out.println(prime[i]);
         }
-        System.out.println("乗除算を行った回数: " + counter);
         */
+        System.out.println("乗除算を行った回数: " + counter);
     }
 }
