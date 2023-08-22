@@ -1,7 +1,5 @@
 package review_kawakubo;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -17,25 +15,23 @@ public class Ex146_B {
 		
 		System.out.println("動かす文字列:");
 		String str = sc.next();
-		List<Character> alpha = str.chars()
-									.mapToObj(ch -> (char)c)
-									.collect(Collectors.toList());
-		
+
 		/*
 		 * Ex146_Bについてはよくできており、修正点はありません。
-		 * 以下のようにList(本来はLinkedListがいいのですが)を使って
-		 * 指定した回数分、先頭から要素を取り出し末尾に追加する方法あります。
+		 * Stream APIを使うと以下のようになります。
+		 * ただし、文字列は10の4乗まで許しているため
+		 * 配列で解いた方がパフォーマンスがいいと思います。
 		 */
-		for (int i = 0; i < num; i++) {
-			Character c = alpha.remove(0);
-			alpha.add(c);
-		}
-		
-		String answer = alpha.stream()
+		int size = 'Z' - 'A' + 1;
+		String answer = str.chars()
+							.mapToObj(ch -> (char)('A' + (ch - 'A' + num) % size))
 							.map(String::valueOf)
 							.collect(Collectors.joining());
-		System.out.println();
 		
+		
+		System.out.println(answer);
+		
+		sc.close();
 	}
 	
 	/**
