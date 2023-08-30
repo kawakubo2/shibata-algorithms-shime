@@ -13,11 +13,15 @@ public class Ex144_B {
 		/*
 		 * 2重ループを抜け出したい場合はラベル付きbreak文を使用します。
 		 * 識別子の文法を守っていればラベルはなんでも構いません。
+		 * 
+		 * また、内側のfor文でi * jがNを超えるとそれ以降は答えがないので
+		 * breakで内側のfor文を抜け出すとパフォーマンスが良くなります。
 		 */
 		boolean canSolved = false;
 		outer:
 		for(int i = 1; i <= 9; i++) {
 			for(int j = 1; j <= 9; j++) {
+				if (i * j > N) break;
 				if((i * j) == N) {
 					canSolved = true;
 					break outer;
