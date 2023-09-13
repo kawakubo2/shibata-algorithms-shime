@@ -16,11 +16,11 @@ public class Ex147_A {
 		 * 以下のようになります。
 		 * (少し、強引ですかね。(;'∀'))
 		 */
-		int[] nums = Arrays.stream(sc.nextLine().split(" "))
+		int total = Arrays.stream(sc.nextLine().split(" "))
 							.mapToInt(Integer::parseInt)
-							.toArray();
+							.sum();
 
-		if(nums[0] + nums[1] + nums[2] >= 22) {
+		if(total >= 22) {
 			System.out.println("bust");
 		}else {
 			System.out.println("win");
