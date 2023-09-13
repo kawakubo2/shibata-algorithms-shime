@@ -18,7 +18,7 @@ public class Ex147_A {
 		}else {
 			System.out.println("win");
 		}
-		
+		sc.close();
 	}
 
 }

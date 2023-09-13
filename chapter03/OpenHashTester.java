@@ -74,12 +74,13 @@ public class OpenHashTester {
     }
 
     public static void main(String[] args) {
-        Menu menu;
+        Menu menu = null;
         Data data;
         Data temp = new Data();
 
         OpenHash<Integer, Data> hash = new OpenHash<Integer, Data>(13);
 
+        OUTER:
         do {
             switch(menu = SelectMenu()) {
                 case ADD:
@@ -111,7 +112,9 @@ public class OpenHashTester {
                 case DUMP:
                     hash.dump();
                     break;
+                case TERMINATE:
+                    break OUTER;
             }
-        } while (menu != Menu.TERMINATE);
+        } while (true);
     }
 }

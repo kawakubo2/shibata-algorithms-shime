@@ -22,6 +22,7 @@ public class Ex147_B {
 		}
 		System.out.println(count);
 		
+		sc.close();
 	}
 
 }

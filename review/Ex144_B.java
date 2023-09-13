@@ -1,4 +1,4 @@
-package 基礎問題トレーニング;
+package review;
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class Ex144_B {
 			}
 		}
 		System.out.println("No");
-		
+		scan.close();	
 	}
 
 }

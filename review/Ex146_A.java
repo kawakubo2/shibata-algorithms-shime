@@ -8,7 +8,7 @@ public class Ex146_A {
 	
 	public static void main(String[] args) {
 
-		String[] day = {"SUN","MON","TUE","WED","THU","FRI","SAT"};
+		// String[] day = {"SUN","MON","TUE","WED","THU","FRI","SAT"};
 		Scanner stdIn = new Scanner(System.in);
 		
 		System.out.println("今日の曜日:");
