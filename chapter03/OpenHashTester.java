@@ -82,7 +82,8 @@ public class OpenHashTester {
 
         OUTER:
         do {
-            switch(menu = SelectMenu()) {
+            menu = SelectMenu();
+            switch(menu) {
                 case ADD:
                     data = new Data();
                     data.scanData("追加", Data.NO | Data.NAME);
