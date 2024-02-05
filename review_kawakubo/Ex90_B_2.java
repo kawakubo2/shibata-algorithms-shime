@@ -1,8 +1,8 @@
-package review;
+package review_kawakubo;
 
 import java.util.Scanner;
 
-public class Ex90_B {
+public class Ex90_B_2 {
 
 	public static void main(String[] args) {
 
