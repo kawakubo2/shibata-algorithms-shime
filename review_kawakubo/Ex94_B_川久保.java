@@ -56,6 +56,15 @@ public class Ex94_B_川久保 {
 		return Math.min(leftCount, m - leftCount);
 	}
 
+	/*
+	 * 川久保
+	 * 長いマス目に耐えきれるように2分探索で解きました。
+	 * 100程度あれば線形探索でもいいかと思います
+	 * 
+	 * ここで、料金所の数がmではなくnが渡されていることに
+	 * 気づかず時間をとってしまいました。
+	 * 結局nは使用しないままになりましたね。
+	 */
 	public static int binarySearch(int[] a, int x) {
 		int left  = 0;
 		int right = a.length - 1;
