@@ -1,6 +1,8 @@
 package review_kawakubo;
 
-public class Ex107_B {
+import java.util.Arrays;
+
+public class Ex107_B_2 {
 
 	/**
 	 * 
@@ -39,44 +41,36 @@ public class Ex107_B {
 				{'.','.','.', '.', '.', '.'},
 				{'.','#','.', '.', '#', '.'},
 			}
-		};
-		/*
-		Scanner sc = new Scanner(System.in);
-		int h = sc.nextInt();
-		int w = sc.nextInt();
-		
-		char[][] grid = new char[h][w];
-		
-		for(int i = 0; i< h; i++) {
-			String s = sc.next();
-			for(int j = 0; j < w; j++) {
-				grid[i][j] = s.charAt(j);
-			}
-		}
-		
-		boolean[] rows = new boolean[h];
-		//初期値をfalseに設定
-		Arrays.fill(rows,false);
-		
-		boolean[] columns = new boolean[w];
-		Arrays.fill(columns, false);
-		
-		
-		for(int i = 0; i < h; i++) {
-			for(int j = 0; j < w; j++) {
-				if(grid[i][j] == '#') {
-					rows[i] = true;
-					columns[j] = true;
-				}
-			}
-		}
-		*/
+		};		
+		int index = 1;
 		for (var grid : grids) {
-			for(int i = 0; i < grid.length; i++) {
-				for(int j = 0; j < grid[i].length; j++) {
-					System.out.print(grid[i][j]);
+			System.out.println("--- テスト" + index++ + " ---");
+			int h = grid.length;
+			int w = grid[0].length;
+			boolean[] rows = new boolean[h];
+			Arrays.fill(rows,false);
+			
+			boolean[] columns = new boolean[w];
+			Arrays.fill(columns, false);
+			for(int i = 0; i < h; i++) {
+				for(int j = 0; j < w; j++) {
+					if(grid[i][j] == '#') {
+						rows[i] = true;
+						columns[j] = true;
+					}
 				}
-				System.out.println();
+			}
+			
+			for(int i = 0; i < h; i++) {
+				if(rows[i]) {
+					for(int j = 0; j < w; j++) {
+						if(columns[j]) {
+							System.out.print(grid[i][j]);
+						}
+					}
+					System.out.println();
+				}
+				
 			}
 		}
 		// sc.close();
