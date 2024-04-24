@@ -11,27 +11,51 @@ public class Ex86_B {
 		String a = sc.next();
 		String b = sc.next();
 		
-	
-		double target = Double.parseDouble(a + b);
-		System.out.println("a + b= " + target);
+		/*
+		 * 川久保
+		 * 制約を見ると、
+		 * 1 <= a, b <= 100
+		 * a,bは整数
+		 * と書いてあるので、最大でも6桁で
+		 * 整数 + 整数 の結果も整数であるので
+		 * int型へ変換可能。
+		 * Mathクラスが使用できないとすると
+		 * targetが平方数であるかを調べるメソッドが
+		 * 必要となる。
+		 * 
+		 * 1 <= n <= Integer.parseInt(a + b);
+		 * 2分探索と同じ要領で、探索可能。
+		 * isSquareメソッドを作ったので
+		 * 少ない検索で平方数であるかを
+		 * 調べることが可能です。
+		 */
+		int target = Integer.parseInt(a + b);
+		System.out.println("a + b = " + target);
 		
-		
-		double ansDouble = Math.sqrt(target);
-		System.out.println("平方根(double) " + ansDouble);
-		
-		int ansInteger = (int)Math.sqrt(target);
-		System.out.println("平方根(int) " + ansInteger);
-		
-		System.out.println("doubleの結果 " + ansDouble * ansDouble);
-		System.out.println("intの結果" + ansInteger * ansInteger);
-		
-		if(ansDouble == ansInteger) {
-			System.out.println("Yes");
-		}else {
-			System.out.println("No");
-		}
+		System.out.println(isSquare(target) ? "Yes": "No");	
 
 		sc.close();
+	}
+	
+	public static boolean isSquare(int num) {
+		int left = 0;
+		int right = num;
+		int mid;
+		int count = 0; // デバッグ用変数
+		while (left <= right) {
+			count++;
+			mid = (left + right) / 2;
+			if (mid * mid > num) {
+				right = mid - 1;
+			} else if (mid * mid < num) {
+				left = mid + 1;
+			} else {
+				System.out.println("検索にかかった回数=" + count);
+				return true;
+			}
+		}
+		System.out.println("検索にかかった回数=" + count);
+		return false;
 	}
 
 }
