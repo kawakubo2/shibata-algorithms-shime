@@ -31,7 +31,7 @@ public class Ex173_B_kawakubo2 {
 
 	private static Map<String, Integer> initJudge(String[] status) {
 		Map<String, Integer> result = new LinkedHashMap<>();
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < status.length; i++) {
 			result.put(status[i], 0);
 		}
 		return result;
