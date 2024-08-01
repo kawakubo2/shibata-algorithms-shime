@@ -1,0 +1,74 @@
+package review;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
+
+public class Ex067_speedCheck_shime {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("テスト1：入力");
+		long startTest01 = System.nanoTime();
+		System.out.println(test1());
+		long  endTest01 = System.nanoTime();
+		System.out.printf("処理時間: %dナノ秒%n",(endTest01 - startTest01));
+		
+		System.out.println("テスト2：入力");
+		long startTest02 = System.nanoTime();
+		System.out.println(test2());
+		long  endTest02 = System.nanoTime();
+		System.out.printf("処理時間: %dナノ秒%n",(endTest02 - startTest02));
+		
+		
+	}
+
+	public static int test1() {
+
+		Scanner sc = new Scanner(System.in);
+
+		int n = sc.nextInt();
+		int k = sc.nextInt();
+
+		List<Integer> list = new ArrayList<Integer>();
+
+		for (int i = 0; i < n; i++) {
+			int l = sc.nextInt();
+			list.add(l);
+		}
+
+		list.sort(Comparator.reverseOrder());
+
+		int sum = 0;
+
+		for (int i = 0; i < k; i++) {
+			sum += list.get(i);
+		}
+		return sum;
+	}
+
+	public static int test2() {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int k = sc.nextInt();
+
+		int[] array = new int[n];
+
+		for (int i = 0; i < n; i++) {
+			array[i] = sc.nextInt();
+		}
+
+		Arrays.sort(array);
+
+		int sum = 0;
+		for (int i = n - k; i < n; i++) {
+			sum += array[i];
+		}
+
+		return sum;
+	}
+}
