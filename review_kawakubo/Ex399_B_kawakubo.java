@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /*
-川久保開設
+川久保解説
 入力データ
 10
 8 12 15 11 12 15 7 10 11 12
