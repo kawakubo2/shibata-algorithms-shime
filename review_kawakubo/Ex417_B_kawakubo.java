@@ -1,10 +1,10 @@
-package review;
+package review_kawakubo;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Ex417_B {
+public class Ex417_B_kawakubo {
 
 	public static void main(String[] args) {
 
