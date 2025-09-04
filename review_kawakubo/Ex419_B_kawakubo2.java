@@ -23,11 +23,15 @@ public class Ex419_B_kawakubo2 {
 			int q = sc.nextInt();
 			if (q == 1) {
 				int x = sc.nextInt();
-				// xがキーに存在しないときはmapにキーxと値1を登録する
+				// xをインデックスとし、その要素に1加算する
 				xs[x] += 1;
 				if (x < min)
 					min = x;
 			} else {
+				/*
+				 * クエリが2の場合、minをインデックスとする要素を1減らす
+				 * その要素が0以下であれば、最小値を探す
+				 */
 				System.out.println(min);
 				xs[min]--;
 				if (xs[min] <= 0) {
