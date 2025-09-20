@@ -1,8 +1,6 @@
 package review_kawakubo;
 
 import java.util.Scanner;
-import java.util.Map;
-import java.util.TreeMap;
 
 public class Ex419_B_kawakubo2 {
 
