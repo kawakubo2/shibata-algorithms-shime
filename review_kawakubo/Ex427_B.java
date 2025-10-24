@@ -19,8 +19,6 @@ public class Ex427_B {
 	private static int digit(int n) {
 		int sum = 0;
 		while (n != 0) {
-			System.out.println("n= " + n);
-			System.out.println("n%10= " + n % 10);
 			sum += (n % 10);
 			n /= 10;
 		}
