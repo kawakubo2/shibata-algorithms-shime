@@ -22,7 +22,7 @@ public class Ex427_B_kawakubo {
 	 * A(6) = f(A(0)) + f(A(1)) + f(A(2)) + f(A(3)) + f(A(4)) + f(A(5)) ---> 23
 	 * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 * A(6) = A(5) + f(A(5))
-	 * となるので、return A(n - 1) + f(n - 2)
+	 * となるので、return A(n - 1) + f(A(n - 1))
 	 * とすれば、すっきり解けます。
 	 * 
 	 * ただし、nが大きな値になると劇的に遅くなるので
@@ -32,7 +32,7 @@ public class Ex427_B_kawakubo {
 	private static int A2(int n) {
 		if (n == 0 || n == 1)
 			return 1;
-		return A(n - 1) + f(A(n - 1));
+		return A2(n - 1) + f(A2(n - 1));
 	}
 
 	private static int A(int n) {
